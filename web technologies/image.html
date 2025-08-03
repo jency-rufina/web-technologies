@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+    img {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Image Maps</h2>
+<p>Click on the computer, the phone, or the cup of coffee to go to a new page and read more about the topic:</p>
+
+<img src="F:\web technologies\fro.jpeg" alt="Image" usemap="#ImageMap">
+
+<map name="ImageMap">
+  <area shape="poly" coords="569,174,473,346,697,227,686,237" alt="casual-sneakers" href="https://www.skechers.in/women/footwear/casual-sneakers">
+  <area shape="rect" coords="290,172,333,250" alt="women-tops" href="https://www.ajio.com/women-tops/c/830316017?srsltid=AfmBOoqQQ57Agatxkavzdvth3zEAsyvRDV3afui7VFSRBjufSMkN_Jm_">
+  <area shape="circle" coords="337,300,44" alt="ACCESSORIES" href="https://www.myntra.com/women-accessories">
+</map>
+
+</body>
+</html>
