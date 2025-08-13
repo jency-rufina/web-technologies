@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Boutique Elegance</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Times New Roman', Times, serif;
+            background: url("https://thumbs.dreamstime.com/b/elegant-boutique-store-interior-blank-poster-marketing-display-backdrop-mockup-advertising-modern-stylish-377552774.jpg") 
+                        no-repeat center center fixed;
+            background-size: cover;
+            color: rgb(12, 11, 11);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden; 
+        }
+
+        header {
+            text-align: center;
+            padding: 5px 0;
+        }
+
+        nav a {
+            margin: 0 10px;
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 36px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.616);
+            margin: 0;
+            padding: 10px;
+        }
+
+        h2 {
+            font-size: 25px;
+            text-align: center;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.795);
+            margin: 5px 0;
+            color: rgb(131, 3, 3);
+        }
+
+        h3 {
+            font-size: 15px;
+            text-shadow: 0 2px 10px rgba(3, 3, 3, 0.699);
+            color: rgba(209, 9, 9, 0.781);
+            margin: 4px 0;
+        }
+
+        p {
+            font-size: 14px;
+            color: blue;
+            text-shadow: 0 2px 8px rgba(17, 126, 228, 0.548);
+            margin: 2px 0;
+            text-align: center;
+            padding: 8px;
+        }
+
+        .products {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .product-card {
+            text-align: center;
+        }
+
+        .product-card img {
+            width: 90px;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .btn {
+            background-color: #f02626;
+            color: white;
+            padding: 6px 12px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 12px;
+            background: rgba(255, 255, 255, 0.5);
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Boutique Elegance!</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Shop</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+        <section>
+        <h2>Discover Timeless Fashion!</h2>
+        <p>Exclusive styles crafted with love and elegance</p>
+        <div style="text-align:center;">
+            <button class="btn" type="button" onclick="window.location.href='https://www.myntra.com/'">Shop Now</button>
+        </div>
+    </section>
+
+    <section class="products">
+        <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvQbnkvlrNowBn0Iq880Hdif-O4LZCiKzRDA&s" alt="Dress" usemap="#dressmap">
+            <map name="dressmap">
+                <area shape="rect" coords="0,0,100,150" href="https://vanheusenindia.abfrl.in/c/women-formal-dresses" alt="Dress">
+            </map>
+            <h3>Elegant Dress</h3>
+            <p>$120</p>
+        </div>
+
+        <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrDv-xnmJ4tWGa74I1MTgw1K_AeI0_sL-4KA&s" alt="Handbag" usemap="#handbagmap">
+            <map name="handbagmap">
+                <area shape="rect" coords="0,0,100,150" href="https://miraggiolife.com/?srsltid=AfmBOopA_rvgrR3priXIbrh8lp07zKr90apnrObCAQmoZMv2q_tFFIRb" alt="Handbag">
+            </map>
+            <h3>Classic Handbag</h3>
+            <p>$80</p>
+        </div>
+
+        <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxziGDCuhqm3UXkwoMJBviKxWpZ57AhsEm7g&s" alt="Shoes" usemap="#shoesmap">
+            <map name="shoesmap">
+                <area shape="rect" coords="0,0,100,150" href="https://www.campusshoes.com/?srsltid=AfmBOor8It4Im57yaxFSFWItB_x7IzN_EyDVp594X33X6U_Jcu1yqGUY" alt="Shoes">
+            </map>
+            <h3>Stylish Heels</h3>
+            <p>$95</p>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2025 Boutique Elegance | Designed with ❤️
+    </footer>
+</body>
+</html>
