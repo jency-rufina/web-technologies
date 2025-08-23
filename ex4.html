@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boutique Requirement Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #903137,#903161,#803190,#5d2da2, #125684,#317d90,#097a64,#339031,#5f9031,#908a31,#907431,#905a31,#a42404);
+      color: rgb(255, 255, 255);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* fit everything in one screen */
+      margin: 0;
+    }
+    form {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 900px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+    h2 {
+      grid-column: span 2;
+      text-align: center;
+    }
+    label { display: block; margin-bottom: 5px; font-weight: bold; }
+    input, select, textarea {
+      width: 90%;
+      padding: 5px;
+      border: none;
+      border-radius: 6px;
+      color: rgb(30, 7, 36);
+    }
+    textarea { resize: none; }
+    button {
+      grid-column: span 2;
+      padding: 10px;
+      background: #00b894;
+      color: rgb(255, 255, 255);
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover { background: #019875; }
+    .error { color: #ff7675; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <form id="boutiqueForm" onsubmit="return validateForm()">
+    <h2>Boutique Requirement Form</h2>
+
+    <!-- 1. Customer Name -->
+    <div>
+      <label for="name">Customer Name:</label>
+      <input type="text" id="name" name="name" required>
+      <span id="nameError" class="error"></span>
+    </div>
+
+    <!-- 2. Age -->
+    <div>
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" min="10" max="100" required>
+      <span id="ageError" class="error"></span>
+    </div>
+
+    <!-- 3. Email -->
+    <div>
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email" required>
+      <span id="emailError" class="error"></span>
+    </div>
+
+    <!-- 4. Phone -->
+    <div>
+      <label for="phone">Phone:</label>
+      <input type="text" id="phone" name="phone" required>
+      <span id="phoneError" class="error"></span>
+    </div>
+
+    <!-- 5. Gender -->
+    <div>
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender" required>
+        <option value="">--Select--</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select>
+      <span id="genderError" class="error"></span>
+    </div>
+
+    <!-- 6. Occasion -->
+    <div>
+      <label for="occasion">Occasion:</label>
+      <select id="occasion" name="occasion" required>
+        <option value="">--Select--</option>
+        <option>Wedding</option>
+        <option>Party</option>
+        <option>Casual</option>
+        <option>Formal</option>
+      </select>
+    </div>
+
+    <!-- 7. Fabric Choice -->
+    <div>
+      <label for="fabric">Preferred Fabric:</label>
+      <input type="text" id="fabric" name="fabric" placeholder="Cotton, Silk, etc." required>
+    </div>
+
+    <!-- 8. Outfit Type -->
+    <div>
+      <label for="outfit">Outfit Type:</label>
+      <select id="outfit" name="outfit" required>
+        <option value="">--Select--</option>
+        <option>Saree</option>
+        <option>Lehenga</option>
+        <option>Kurti</option>
+        <option>Western Dress</option>
+        <option>Custom</option>
+      </select>
+    </div>
+
+    <!-- 9. Size -->
+    <div>
+      <label for="size">Size:</label>
+      <input type="text" id="size" name="size" placeholder="S/M/L/XL" required>
+    </div>
+
+    <!-- 10. Color Preference -->
+    <div>
+      <label for="color">Color Preference:</label>
+      <input type="color" id="color" name="color">
+    </div>
+
+    <!-- 11. Budget -->
+    <div>
+      <label for="budget">Budget (₹):</label>
+      <input type="number" id="budget" name="budget" min="500" required>
+    </div>
+
+    <!-- 12. Delivery Date -->
+    <div>
+      <label for="date">Delivery Date:</label>
+      <input type="date" id="date" name="date" required>
+    </div>
+
+    <!-- 13. Special Instructions -->
+    <div style="grid-column: span 2;">
+      <label for="instructions">Special Instructions:</label>
+      <textarea id="instructions" name="instructions" rows="2"></textarea>
+    </div>
+
+    <!-- 14. Upload Reference Image -->
+    <div>
+      <label for="reference">Reference Image:</label>
+      <input type="file" id="reference" name="reference" accept="image/*">
+    </div>
+
+    <!-- 15. Terms -->
+    <div>
+      <label><input type="checkbox" id="terms" required> I agree to the terms & conditions</label>
+    </div>
+
+    <button type="submit">Submit Requirements</button>
+  </form>
+
+  <script>
+    function validateForm() {
+      let valid = true;
+
+      // Name validation
+      let name = document.getElementById("name").value;
+      if (name.length < 3) {
+        document.getElementById("nameError").innerText = "Name must be at least 3 characters";
+        valid = false;
+      } else { document.getElementById("nameError").innerText = ""; }
+
+      // Age validation
+      let age = document.getElementById("age").value;
+      if (age < 10 || age > 100) {
+        document.getElementById("ageError").innerText = "Age must be between 10 and 100";
+        valid = false;
+      } else { document.getElementById("ageError").innerText = ""; }
+
+      // Email validation
+      let email = document.getElementById("email").value;
+      let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (!email.match(emailPattern)) {
+        document.getElementById("emailError").innerText = "Enter a valid email";
+        valid = false;
+      } else { document.getElementById("emailError").innerText = ""; }
+
+      // Phone validation
+      let phone = document.getElementById("phone").value;
+      let phonePattern = /^[0-9]{10}$/;
+      if (!phone.match(phonePattern)) {
+        document.getElementById("phoneError").innerText = "Enter valid 10-digit phone";
+        valid = false;
+      } else { document.getElementById("phoneError").innerText = ""; }
+
+      // Gender validation
+      let gender = document.getElementById("gender").value;
+      if (gender === "") {
+        document.getElementById("genderError").innerText = "Please select gender";
+        valid = false;
+      } else { document.getElementById("genderError").innerText = ""; }
+
+      return valid;
+    }
+  </script>
+</body>
+</html>
